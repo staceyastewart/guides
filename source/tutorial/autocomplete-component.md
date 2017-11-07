@@ -298,7 +298,7 @@ similar to [how we tested our rental listing component earlier](../simple-compon
 Lets begin by opening the component integration test created when we generated our `list-filter` component, `tests/integration/components/list-filter-test.js`.
 Remove the default test, and create a new test that verifies that by default, the component will list all items.
 
-```tests/integration/components/list-filter-test.js
+```tests/integration/components/list-filter-test.js{+8,+9,-11,-12,-13,-14,-15,-16,-17,-18,-19,-20,-21,-22,-23,-24,-25,-26,-27}
 import { moduleForComponent, test } from 'ember-qunit';
 import hbs from 'htmlbars-inline-precompile';
 
@@ -307,6 +307,24 @@ moduleForComponent('list-filter', 'Integration | Component | filter listing', {
 });
 
 test('should initially load all listings', function (assert) {
+});
+
+test('it renders', function(assert) {
+  // Set any properties with this.set('myProperty', 'value');
+  // Handle any actions with this.on('myAction', function(val) { ... });
+
+  this.render(hbs`{{list-filter}}`);
+
+  assert.equal(this.$().text().trim(), '');
+
+  // Template block usage:
+  this.render(hbs`
+    {{#list-filter}}
+      template block text
+    {{/list-filter}}
+  `);
+
+  assert.equal(this.$().text().trim(), 'template block text');
 });
 ```
 
