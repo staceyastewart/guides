@@ -220,7 +220,7 @@ We will update the results on screen only if the original filter value and the c
 ```app/controllers/rentals.js{-7,+8,+9,+10,+11,-13,+14,+15,+16,+17}
 import Controller from '@ember/controller';
 
-export default Ember.Controller.extend({
+export default Controller.extend({
   actions: {
     filterByCity(param) {
       if (param !== '') {
@@ -247,7 +247,7 @@ we've added a new property called `query` to the filter results instead of just 
 ```app/components/list-filter.js{-18,+9,+10,+11,+19,+20,+21,+22}
 import Component from '@ember/component';
 
-export default Ember.Component.extend({
+export default Component.extend({
   classNames: ['list-filter'],
   value: '',
 
