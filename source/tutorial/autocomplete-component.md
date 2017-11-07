@@ -218,7 +218,7 @@ To do this we'll simply provide the filter text to the filter function, so that 
 We will update the results on screen only if the original filter value and the current filter value are the same.
 
 ```app/controllers/rentals.js{-7,+8,+9,+10,+11,-13,+14,+15,+16,+17}
-import Component from '@ember/component';
+import Controller from '@ember/controller';
 
 export default Ember.Controller.extend({
   actions: {
