@@ -53,7 +53,10 @@ which makes use of `google.maps.Map` to create our map element,
 `google.maps.Geocoder` to lookup the coordinates of our location,
 and `google.maps.Marker` to pin our map based on the resolved location.
 
-```app/utils/google-maps.js
+```app/utils/google-maps.js{-1,-2,-3,+4,+6,+8,+10,+11,+12,+14,+15,+16,+17,+18,+20,+21,+22,+23,+24,+25,+26,+27,+28,+29,+31}
+export default function googleMaps() {
+  return true;
+}
 import EmberObject from '@ember/object';
 
 const google = window.google;
