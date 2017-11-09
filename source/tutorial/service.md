@@ -100,7 +100,7 @@ Accessing our maps API through a [service](../../applications/services) will giv
   allowing for easier refactoring and maintenance.
 * It is lazy-loaded, meaning it won't be initialized until it is called the first time.
   In some cases this can reduce your app's processor load and memory consumption.
-* It is a singleton, which means there is only one instance of the service object in browser.
+* It is a singleton, which means there is only one instance of the service object in the browser.
   This will allow us to keep map data while the user navigates around the app,
   so that returning to a page doesn't require it to reload its maps.
 
