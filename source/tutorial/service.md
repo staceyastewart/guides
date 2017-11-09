@@ -186,7 +186,7 @@ We append the map element we get back from the service by implementing `didInser
 which is a [component lifecycle hook](../../components/the-component-lifecycle/#toc_integrating-with-third-party-libraries-with-code-didinsertelement-code).
 This function runs during the component render, after the component's markup gets inserted into the page.
 
-```app/components/location-map.js
+```app/components/location-map.js{+2,+5,+7,+8,+9,+10,+11,+12}
 import Component from '@ember/component';
 import { inject as service } from '@ember/service';
 
