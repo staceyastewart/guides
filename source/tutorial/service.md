@@ -169,7 +169,8 @@ Running this command generates three files: a component JavaScript file, a templ
 Let's start by adding a `div` element to the component template.
 This `div` will act as a place for the 3rd party map API to render the map to.
 
-```app/templates/components/location-map.hbs
+```app/templates/components/location-map.hbs{-1,+2}
+{{yield}}
 <div class="map-container"></div>
 ```
 
