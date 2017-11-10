@@ -250,7 +250,7 @@ On line 6 of `maps-test.js` below we create an Ember object to simulate the beha
 To instantiate the object under test, use the `this.subject` function, passing in initial values as arguments.
 In our case we are passing in our fake map utility object in the first test, and passing a cache object for the second test.
 
-```tests/unit/services/maps-test.js
+```tests/unit/services/maps-test.js{+2,+4,+6,+7,+8,+9,+10,+11,+12,-14,-15,-16,-17,+18,-20,-21,-22,-23,-24,+25,+26,+27,+28,+29,+30,+31,+32,+34,+35,+36,+37,+38,+39,+40,+41,+42}
 import { moduleFor, test } from 'ember-qunit';
 import EmberObject from '@ember/object';
 
@@ -264,8 +264,17 @@ let MapUtilStub = EmberObject.extend({
   }
 });
 
+moduleFor('service:maps', 'Unit | Service | maps', {
+  // Specify the other units that are required for this test.
+  // needs: ['service:foo']
+});
 moduleFor('service:maps', 'Unit | Service | maps');
 
+// Replace this with your real tests.
+test('it exists', function(assert) {
+  let service = this.subject();
+  assert.ok(service);
+});
 test('should create a new map if one isnt cached for location', function (assert) {
   assert.expect(4);
   let stubMapUtil = MapUtilStub.create({ assert });
