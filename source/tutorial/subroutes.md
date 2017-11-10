@@ -308,7 +308,7 @@ When we call `this.get('store').findRecord('rental', params.rental_id)`, Ember D
 
 Next, we can update the template for our show route (`app/templates/rentals/show.hbs`) and list the information for our rental.
 
-```app/templates/rentals/show.hbs
+```app/templates/rentals/show.hbs{+1,+2,+3,+4,+5,+6,+7,+8,+9,+10,+11,+12,+13,+14,+15,+16,+17,+18,+19,-20}
 <div class="jumbo show-listing">
   <h2 class="title">{{model.title}}</h2>
   <div class="right detail-section">
@@ -328,6 +328,7 @@ Next, we can update the template for our show route (`app/templates/rentals/show
   </div>
   <img src="{{model.image}}" class="rental-pic">
 </div>
+{{outlet}}
 ```
 
 Now browse to `localhost:4200/rentals/grand-old-mansion` and you should see the information listed for that specific rental.
