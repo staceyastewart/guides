@@ -316,7 +316,7 @@ That way when Ember injects the map service into the component, it uses our fake
 A stub stands in place of the real object in your application and simulates its behavior.
 In the stub service, define a method that will fetch the map based on location, called `getMapElement`.
 
-```tests/integration/components/location-map-test.js
+```tests/integration/components/location-map-test.js{+3,+5,+6,+7,+8,+9,+10,+11,+12,+16,+17,+18,+19,+22,+23,+24,+25,+26,+27}
 import { moduleForComponent, test } from 'ember-qunit';
 import hbs from 'htmlbars-inline-precompile';
 import Service from '@ember/service';
