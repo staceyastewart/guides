@@ -273,11 +273,12 @@ We also want to simplify the URL so that it looks more like this: `localhost:420
 
 To do that, we modify our route as follows:
 
-```app/router.js{+5}
+```app/router.js{-5,+6}
 Router.map(function() {
   this.route('about');
   this.route('contact');
   this.route('rentals', function() {
+    this.route('show');
     this.route('show', { path: '/:rental_id' });
   });
 });
