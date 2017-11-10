@@ -145,9 +145,12 @@ ember g controller rentals/index
 
 Instead of copying the whole controller file over to `app/controllers/rentals/index.js` from `app/controllers/rentals.js`, we'll just take advantage of JavaScript's import/export feature to re-export the rentals controller as the rentals/index controller:
 
-```app/controllers/rentals/index.js
+```app/controllers/rentals/index.js{-1,+2,-4,-5,+6}
+import Controller from '@ember/controller';
 import RentalsController from '../rentals';
 
+export default Controller.extend({
+});
 export default RentalsController;
 ```
 
