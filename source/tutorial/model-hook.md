@@ -17,7 +17,7 @@ The model function we've added to our `rentals` route handler will be called whe
 
 Let's open `app/routes/rentals.js` and return an array of rental objects from the `model` function:
 
-```app/routes/rentals.js{+5,+6,+7,+8,+9,+10,+11,+12,+13,+14,+15,+16,+17,+18,+19,+20,+21,+22,+23,+24,+25,+26,+27,+28,+29,+30,+31,+32,+33,+34,+35,+36,+37,+38}
+```app/routes/rentals.js{+4,+5,+6,+7,+8,+9,+10,+11,+12,+13,+14,+15,+16,+17,+18,+19,+20,+21,+22,+23,+24,+25,+26,+27,+28,+29,+30,+31,+32,+33}
 import Route from '@ember/routing/route';
 
 export default Route.extend({
@@ -27,7 +27,7 @@ export default Route.extend({
       title: 'Grand Old Mansion',
       owner: 'Veruca Salt',
       city: 'San Francisco',
-      propertyType: 'Estate',
+      category: 'Estate',
       bedrooms: 15,
       image: 'https://upload.wikimedia.org/wikipedia/commons/c/cb/Crane_estate_(5).jpg',
       description: 'This grand old mansion sits on over 100 acres of rolling hills and dense redwood forests.'
@@ -36,21 +36,19 @@ export default Route.extend({
       title: 'Urban Living',
       owner: 'Mike TV',
       city: 'Seattle',
-      propertyType: 'Condo',
+      category: 'Condo',
       bedrooms: 1,
       image: 'https://upload.wikimedia.org/wikipedia/commons/0/0e/Alfonso_13_Highrise_Tegucigalpa.jpg',
       description: 'A commuters dream. This rental is within walking distance of 2 bus stops and the Metro.'
-
     }, {
       id: 'downtown-charm',
       title: 'Downtown Charm',
       owner: 'Violet Beauregarde',
       city: 'Portland',
-      propertyType: 'Apartment',
+      category: 'Apartment',
       bedrooms: 3,
       image: 'https://upload.wikimedia.org/wikipedia/commons/f/f7/Wheeldon_Apartment_Building_-_Portland_Oregon.jpg',
       description: 'Convenience is at your doorstep with this charming downtown rental. Great restaurants and active night life are within a few feet.'
-
     }];
   }
 });
@@ -85,7 +83,7 @@ This helper will let us loop through each of the rental objects in our model:
       <span>Owner:</span> {{rental.owner}}
     </div>
     <div class="detail type">
-      <span>Type:</span> {{rental.propertyType}}
+      <span>Type:</span> {{rental.category}}
     </div>
     <div class="detail location">
       <span>Location:</span> {{rental.city}}

@@ -30,7 +30,7 @@ export function rentalPropertyType(params/*, hash*/) {
 export default helper(rentalPropertyType);
 ```
 
-Let's update our `rental-listing` component template to use our new helper and pass in `rental.propertyType`:
+Let's update our `rental-listing` component template to use our new helper and pass in `rental.category`:
 
 ```app/templates/components/rental-listing.hbs{-11,+12,+13}
 <article class="listing">
@@ -43,9 +43,9 @@ Let's update our `rental-listing` component template to use our new helper and p
     <span>Owner:</span> {{rental.owner}}
   </div>
   <div class="detail type">
-    <span>Type:</span> {{rental.propertyType}}
-    <span>Type:</span> {{rental-property-type rental.propertyType}}
-      - {{rental.propertyType}}
+    <span>Type:</span> {{rental.category}}
+    <span>Type:</span> {{rental-property-type rental.category}}
+      - {{rental.category}}
   </div>
   <div class="detail location">
     <span>Location:</span> {{rental.city}}
@@ -57,11 +57,11 @@ Let's update our `rental-listing` component template to use our new helper and p
 ```
 
 Ideally we'll see "Type: Standalone - Estate" for our first rental property.
-Instead, our default template helper is returning back our `rental.propertyType` values.
+Instead, our default template helper is returning back our `rental.category` values.
 Let's update our helper to look if a property exists in an array of `communityPropertyTypes`,
 if so, we'll return either `'Community'` or `'Standalone'`:
 
-```app/helpers/rental-property-type.js{-3,-4,-5,+7,+8,+9,+10,+11,+13,+14,+15,+16,+17,+18,+19}
+```app/helpers/rental-property-type.js{-3,-4,-5,+7,+8,+9,+10,+11,+13,+14,+15,+16,+18,+19}
 import { helper } from '@ember/component/helper';
 
 export function rentalPropertyType(params/*, hash*/) {
